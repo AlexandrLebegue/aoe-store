@@ -78,6 +78,66 @@
           "apkFile": "apps/aoe-store/versions/v3/app.apk"
         }
       ]
+    },
+    {
+      "slug": "bubbleclaw",
+      "name": "BubbleClaw",
+      "tagline": "Assistant flottant pour piloter ton agent",
+      "description": "BubbleClaw affiche une bulle flottante par-dessus toutes tes applications pour discuter avec ton assistant, dicter une consigne ou reprendre une conversation sans changer d app.",
+      "developer": "ProxBoss",
+      "category": "Outils",
+      "package": "dev.bubbleclaw",
+      "accentColor": "#3B82F6",
+      "iconUrl": "/files/apps/bubbleclaw/versions/v19/icon.png",
+      "coverUrls": [
+        "/files/apps/bubbleclaw/versions/v19/cover-1.png",
+        "/files/apps/bubbleclaw/versions/v19/cover-2.png",
+        "/files/apps/bubbleclaw/versions/v19/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T01:21:55.467Z",
+      "updatedAt": "2026-11-09T01:21:55.467Z",
+      "downloads": 0,
+      "versions": [
+        {
+          "version": "0.19",
+          "versionCode": 19,
+          "changelog": "Version 0.19 : stabilite des bulles et corrections de chat.",
+          "sizeBytes": 12605968,
+          "sha256": "77a4722d33899ea1d5b884e6c6cd893b939323db6e644fbb1e94bfa379b97164",
+          "publishedAt": "2026-11-09T01:21:55.467Z",
+          "apkFile": "apps/bubbleclaw/versions/v19/app.apk"
+        }
+      ]
+    },
+    {
+      "slug": "potato-farm",
+      "name": "Potato Farm",
+      "tagline": "Clique, plante, automatise : ta ferme de pommes de terre",
+      "description": "Potato Farm est un clicker de gestion : recolte des pommes de terre, achete des ameliorations, debloque des automatisations et regarde ta ferme tourner toute seule. Progression longue, optimisations, prestige.",
+      "developer": "ProxBoss",
+      "category": "Jeux",
+      "package": "com.alexandrelebegue.potatoclicker",
+      "accentColor": "#A16207",
+      "iconUrl": "/files/apps/potato-farm/versions/v2000000/icon.png",
+      "coverUrls": [
+        "/files/apps/potato-farm/versions/v2000000/cover-1.png",
+        "/files/apps/potato-farm/versions/v2000000/cover-2.png",
+        "/files/apps/potato-farm/versions/v2000000/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T01:22:01.620Z",
+      "updatedAt": "2026-11-09T01:22:01.620Z",
+      "downloads": 0,
+      "versions": [
+        {
+          "version": "2.0.0-dev",
+          "versionCode": 2000000,
+          "changelog": "Version 2.0 : refonte de la boucle de progression et des ameliorations.",
+          "sizeBytes": 4587032,
+          "sha256": "08a14a8b1089a9473e0b71984f62b4530f50d16ee2fce937ea02c06f2d9b8bf3",
+          "publishedAt": "2026-11-09T01:22:01.620Z",
+          "apkFile": "apps/potato-farm/versions/v2000000/app.apk"
+        }
+      ]
     }
   ]
 }
