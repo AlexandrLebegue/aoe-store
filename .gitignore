@@ -1,0 +1,22 @@
+node_modules/
+*.log
+
+# Données d'exécution
+data/blobs/
+data/publish.token
+data/tmp/
+
+# Android
+android/.gradle/
+android/.kotlin/
+android/local.properties
+android/build/
+android/app/build/
+android/captures/
+*.apk
+*.aab
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store

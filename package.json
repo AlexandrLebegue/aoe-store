@@ -1,0 +1,15 @@
+{
+  "name": "aoe-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Boutique d'applications privee : serveur de catalogue, CLI de publication et client Android",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server/src/index.js",
+    "test": "node --test server/test/*.test.js shared/test/*.test.js",
+    "publish": "node cli/bin/store-publish.js"
+  }
+}
