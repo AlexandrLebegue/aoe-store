@@ -101,7 +101,11 @@ fun HomeScreen(
         state.apps.sortedByDescending { it.updatedAt }.take(8)
     }
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
+    ) {
         HomeHeader(
             query = state.query,
             onQueryChange = onQueryChange,

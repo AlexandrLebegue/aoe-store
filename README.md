@@ -17,7 +17,7 @@ shared/   code partagé (inspection APK, semver, accents)
 ```
 
 Le serveur tourne actuellement sur `http://192.168.1.60:8099` et le catalogue
-contient deux applications : **AoE Companion 0.9.2** et **AoE Store 1.0.1**.
+contient deux applications : **AoE Companion 0.9.2** et **AoE Store 1.0.2**.
 
 ## Démarrage rapide
 
@@ -174,7 +174,7 @@ ANDROID_HOME=/home/dev/android-sdk JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 
 ```
 
 APK : `android/app/build/outputs/apk/debug/app-debug.apk`
-(package `dev.proxboss.aoestore`, version `1.0.1`, versionCode `2`).
+(package `dev.proxboss.aoestore`, version `1.0.2`, versionCode `3`).
 
 Installation sur un appareil connecté :
 
