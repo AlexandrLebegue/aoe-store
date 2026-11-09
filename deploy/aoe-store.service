@@ -1,0 +1,26 @@
+[Unit]
+Description=AoE Store — catalogue d'applications privé
+Documentation=file:///home/dev/projects/aoe-store/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dev
+Group=dev
+WorkingDirectory=/home/dev/projects/aoe-store
+ExecStart=/home/dev/node-v22.23.4-linux-x64/bin/node /home/dev/projects/aoe-store/server/src/index.js
+Environment=NODE_ENV=production
+Environment=HOST=0.0.0.0
+Environment=PORT=8099
+Environment=AOE_STORE_DATA_DIR=/home/dev/projects/aoe-store/data
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/home/dev/projects/aoe-store/data
+
+[Install]
+WantedBy=multi-user.target
