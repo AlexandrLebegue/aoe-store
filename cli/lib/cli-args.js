@@ -108,7 +108,7 @@ Variables d’environnement :
   AOE_STORE_URL, AOE_STORE_TOKEN, AOE_STORE_TOKEN_FILE, AOE_STORE_PYTHON
 
 Exemple :
-  store-publish --server http://192.168.1.60:8099 \\
+  store-publish --server http://192.168.1.63:8099 \\
     --token "$(cat /home/dev/projects/aoe-store/data/publish.token)" \\
     --slug aoe-companion --name "AoE Companion" \\
     --tagline "Piloter Agent of Empires depuis le téléphone" \\

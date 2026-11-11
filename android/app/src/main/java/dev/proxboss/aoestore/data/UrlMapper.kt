@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets
 
 object UrlMapper {
 
-    const val DEFAULT_SERVER = "http://192.168.1.60:8099"
+    const val DEFAULT_SERVER = "http://192.168.1.63:8099"
 
     fun normalizeBase(input: String): String {
         var value = input.trim()

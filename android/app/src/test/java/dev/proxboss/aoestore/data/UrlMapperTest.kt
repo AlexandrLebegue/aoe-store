@@ -8,7 +8,7 @@ class UrlMapperTest {
 
     @Test
     fun `normalise l URL du serveur`() {
-        assertEquals("http://192.168.1.60:8099", UrlMapper.normalizeBase("192.168.1.60:8099/"))
+        assertEquals("http://192.168.1.63:8099", UrlMapper.normalizeBase("192.168.1.63:8099/"))
         assertEquals("https://store.example", UrlMapper.normalizeBase("https://store.example///"))
         assertEquals(UrlMapper.DEFAULT_SERVER, UrlMapper.normalizeBase("  "))
     }

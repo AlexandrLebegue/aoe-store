@@ -16,7 +16,7 @@ deploy/   unité systemd aoe-store.service
 shared/   code partagé (inspection APK, semver, accents)
 ```
 
-Le serveur tourne actuellement sur `http://192.168.1.60:8099` et le catalogue
+Le serveur tourne actuellement sur `http://192.168.1.63:8099` et le catalogue
 contient deux applications : **AoE Companion 0.9.2** et **AoE Store 1.0.2**.
 
 ## Démarrage rapide
@@ -113,7 +113,7 @@ Il pointe sur le CLI du dépôt avec Node 22. Si `~/.local/bin` n'est pas dans l
 
 ```bash
 TOKEN=$(cat /home/dev/projects/aoe-store/data/publish.token)
-store-publish --server http://192.168.1.60:8099 --token "$TOKEN" \
+store-publish --server http://192.168.1.63:8099 --token "$TOKEN" \
   --slug mon-app --name "Mon App" --tagline "Accroche courte" --category Outils --developer ProxBoss \
   --apk ./app-debug.apk --changelog "Première version"
 ```
@@ -162,7 +162,7 @@ aucun Hilt/Room. Thème sombre par défaut, clair/système dans les réglages.
 - Installation : téléchargement avec progression, vérification SHA-256,
   FileProvider + `ACTION_VIEW`, gestion de l'autorisation « sources inconnues »
   et de l'état installé au retour.
-- Réglages : URL du serveur (défaut `http://192.168.1.60:8099`), test de
+- Réglages : URL du serveur (défaut `http://192.168.1.63:8099`), test de
   connexion, thème système/sombre/clair, à propos.
 
 ### Construire et tester
