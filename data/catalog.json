@@ -4,20 +4,20 @@
     {
       "slug": "aoe-companion",
       "name": "AoE Companion",
-      "tagline": "Piloter Agent of Empires depuis le téléphone",
-      "description": "AoE Companion est le compagnon mobile officiel de vos sessions Agent of Empires. Suivez l'activité de vos agents, pilotez vos projets et gardez un œil sur votre empire, où que vous soyez. Une interface rapide, sombre et pensée pour le contrôle à distance.",
-      "developer": "ProxBoss",
+      "tagline": "Pilote Agent of Empires depuis ton telephone",
+      "description": "Pilote Agent of Empires depuis ton telephone",
+      "developer": "Proxboss",
       "category": "Outils",
       "package": "dev.proxboss.aoe",
-      "accentColor": "#3B82F6",
-      "iconUrl": "/files/apps/aoe-companion/versions/v11/icon.png",
+      "accentColor": "#E8B44A",
+      "iconUrl": "/files/apps/aoe-companion/versions/v12/icon.png",
       "coverUrls": [
-        "/files/apps/aoe-companion/versions/v11/cover-1.png",
-        "/files/apps/aoe-companion/versions/v11/cover-2.png",
-        "/files/apps/aoe-companion/versions/v11/cover-3.png"
+        "/files/apps/aoe-companion/versions/v12/cover-1.png",
+        "/files/apps/aoe-companion/versions/v12/cover-2.png",
+        "/files/apps/aoe-companion/versions/v12/cover-3.png"
       ],
       "createdAt": "2026-11-09T00:28:35.101Z",
-      "updatedAt": "2026-11-09T00:28:35.101Z",
+      "updatedAt": "2026-11-09T21:12:53.751Z",
       "downloads": 4,
       "versions": [
         {
@@ -28,6 +28,15 @@
           "sha256": "7d73d95d080c84f7eb83b22f0d9fc9f7541676c5746c14e4a1bcf4a6a1355999",
           "publishedAt": "2026-11-09T00:28:35.101Z",
           "apkFile": "apps/aoe-companion/versions/v11/app.apk"
+        },
+        {
+          "version": "0.9.3",
+          "versionCode": 12,
+          "changelog": "Preparation de la publication publique, URL par defaut neutre",
+          "sizeBytes": 61820365,
+          "sha256": "b7f1618def3f08b8e859667b0c457cfb71e2942797afe27118f61a9f05e829fb",
+          "publishedAt": "2026-11-09T21:12:53.751Z",
+          "apkFile": "apps/aoe-companion/versions/v12/app.apk"
         }
       ]
     },
@@ -83,19 +92,19 @@
       "slug": "bubbleclaw",
       "name": "BubbleClaw",
       "tagline": "Assistant flottant pour piloter ton agent",
-      "description": "BubbleClaw affiche une bulle flottante par-dessus toutes tes applications pour discuter avec ton assistant, dicter une consigne ou reprendre une conversation sans changer d app.",
-      "developer": "ProxBoss",
+      "description": "Assistant flottant pour piloter ton agent",
+      "developer": "Proxboss",
       "category": "Outils",
       "package": "dev.bubbleclaw",
       "accentColor": "#3B82F6",
-      "iconUrl": "/files/apps/bubbleclaw/versions/v19/icon.png",
+      "iconUrl": "/files/apps/bubbleclaw/versions/v20/icon.png",
       "coverUrls": [
-        "/files/apps/bubbleclaw/versions/v19/cover-1.png",
-        "/files/apps/bubbleclaw/versions/v19/cover-2.png",
-        "/files/apps/bubbleclaw/versions/v19/cover-3.png"
+        "/files/apps/bubbleclaw/versions/v20/cover-1.png",
+        "/files/apps/bubbleclaw/versions/v20/cover-2.png",
+        "/files/apps/bubbleclaw/versions/v20/cover-3.png"
       ],
       "createdAt": "2026-11-09T01:21:55.467Z",
-      "updatedAt": "2026-11-09T01:21:55.467Z",
+      "updatedAt": "2026-11-09T21:14:48.720Z",
       "downloads": 0,
       "versions": [
         {
@@ -106,6 +115,15 @@
           "sha256": "77a4722d33899ea1d5b884e6c6cd893b939323db6e644fbb1e94bfa379b97164",
           "publishedAt": "2026-11-09T01:21:55.467Z",
           "apkFile": "apps/bubbleclaw/versions/v19/app.apk"
+        },
+        {
+          "version": "0.20",
+          "versionCode": 20,
+          "changelog": "Preparation de la publication publique, URL par defaut neutre",
+          "sizeBytes": 12605940,
+          "sha256": "1f86cab12cd454842d7eb9d4906939751172b04ab96ccadfd9ea923d023ea40e",
+          "publishedAt": "2026-11-09T21:14:48.720Z",
+          "apkFile": "apps/bubbleclaw/versions/v20/app.apk"
         }
       ]
     },
@@ -136,6 +154,174 @@
           "sha256": "08a14a8b1089a9473e0b71984f62b4530f50d16ee2fce937ea02c06f2d9b8bf3",
           "publishedAt": "2026-11-09T01:22:01.620Z",
           "apkFile": "apps/potato-farm/versions/v2000000/app.apk"
+        }
+      ]
+    },
+    {
+      "slug": "comptoir",
+      "name": "Comptoir",
+      "tagline": "Le portail de ton homelab dans la poche",
+      "description": "Comptoir recense les applications de ton homelab Proxmox : conteneurs, services, ports et descriptions générées par l'IA, avec recherche, filtres et fiches détaillées. Cette application reprend le portail Comptoir en version native, pensée pour le téléphone.",
+      "developer": "Proxboss",
+      "category": "Outils",
+      "package": "dev.proxboss.comptoir",
+      "accentColor": "#C8A27A",
+      "iconUrl": "/files/apps/comptoir/versions/v2/icon.png",
+      "coverUrls": [
+        "/files/apps/comptoir/versions/v2/cover-1.png",
+        "/files/apps/comptoir/versions/v2/cover-2.png",
+        "/files/apps/comptoir/versions/v2/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T01:51:33.605Z",
+      "updatedAt": "2026-11-09T01:59:02.618Z",
+      "downloads": 5,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "versionCode": 1,
+          "changelog": "Version initiale",
+          "sizeBytes": 60633323,
+          "sha256": "c7c766079a29135b7f3c341441525f884622b1f87eb28961fb15ee4e1089b945",
+          "publishedAt": "2026-11-09T01:51:33.605Z",
+          "apkFile": "apps/comptoir/versions/v1/app.apk"
+        },
+        {
+          "version": "1.0.1",
+          "versionCode": 2,
+          "changelog": "Version initiale",
+          "sizeBytes": 60385065,
+          "sha256": "b0bc66b0f975ecff00d4d4fd1298a9d239441bddb54f223f50d6a1d966259091",
+          "publishedAt": "2026-11-09T01:59:02.618Z",
+          "apkFile": "apps/comptoir/versions/v2/app.apk"
+        }
+      ]
+    },
+    {
+      "slug": "proxguard",
+      "name": "ProxGuard",
+      "tagline": "Supervision Proxmox VE et alertes sur ton téléphone",
+      "description": "ProxGuard supervise ton hôte Proxmox VE depuis ton téléphone : CPU, RAM, stockage, charge et état des VMs et conteneurs en temps réel. Des courbes horaires et un historique local de 24 h gardent une trace de l'activité, tandis que des alertes configurables te préviennent avant la panne. Connexion par jeton d'API, certificat auto-signé épinglé et données 100 % locales. WorkManager vérifie tes seuils toutes les 15 minutes, même en arrière-plan.",
+      "developer": "Proxboss",
+      "category": "Outils",
+      "package": "dev.proxboss.proxguard",
+      "accentColor": "#22D3EE",
+      "iconUrl": "/files/apps/proxguard/versions/v1/icon.png",
+      "coverUrls": [
+        "/files/apps/proxguard/versions/v1/cover-1.png",
+        "/files/apps/proxguard/versions/v1/cover-2.png",
+        "/files/apps/proxguard/versions/v1/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T02:03:06.362Z",
+      "updatedAt": "2026-11-09T02:03:06.362Z",
+      "downloads": 2,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "versionCode": 1,
+          "changelog": "Version initiale",
+          "sizeBytes": 62538930,
+          "sha256": "35bb47fcbc74a8c6ce6037cf5d9aa494d44a249edca57a7fe15f6faf79d7049a",
+          "publishedAt": "2026-11-09T02:03:06.362Z",
+          "apkFile": "apps/proxguard/versions/v1/app.apk"
+        }
+      ]
+    },
+    {
+      "slug": "duo-duel",
+      "name": "Duo Duel",
+      "tagline": "2 à 4 joueurs, un seul téléphone",
+      "description": "Duo Duel transforme votre téléphone en arène de party pour 2 à 4 joueurs. Chacun défend sa zone tactile et s'affronte dans cinq mini-jeux éclair : duel de taps, sumo de bulles, tir de cibles, mémoire flash et course de curseurs. Les manches s'enchaînent avec compte à rebours, scores et podium final, le tout sans réseau ni compte. Prénoms, couleurs et palmarès sont sauvegardés sur l'appareil, avec mode daltonien, sons arcade et vibrations par joueur.",
+      "developer": "Proxboss",
+      "category": "Jeux",
+      "package": "dev.proxboss.duoduel",
+      "accentColor": "#F472B6",
+      "iconUrl": "/files/apps/duo-duel/versions/v1/icon.png",
+      "coverUrls": [
+        "/files/apps/duo-duel/versions/v1/cover-1.png",
+        "/files/apps/duo-duel/versions/v1/cover-2.png",
+        "/files/apps/duo-duel/versions/v1/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T02:08:09.310Z",
+      "updatedAt": "2026-11-09T02:08:09.310Z",
+      "downloads": 2,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "versionCode": 1,
+          "changelog": "Version initiale",
+          "sizeBytes": 27518548,
+          "sha256": "656381a79ef7330f2ac97b2175f442df7d53f92814af51bf69996e36280e7619",
+          "publishedAt": "2026-11-09T02:08:09.310Z",
+          "apkFile": "apps/duo-duel/versions/v1/app.apk"
+        }
+      ]
+    },
+    {
+      "slug": "station-kepler",
+      "name": "Station Kepler",
+      "tagline": "Gère ta station spatiale, module par module",
+      "description": "Commandez une station spatiale isolée et faites-la vivre, module par module. Gérez l'énergie, l'oxygène, l'eau, les vivres et le moral d'un équipage qui possède ses propres traits, compétences et limites. Construisez, réparez, recherchez et affrontez plus de vingt événements à choix dont les conséquences reviennent plus tard. Cinq chapitres, vingt-quatre recherches et une progression hors ligne de huit heures vous attendent.",
+      "developer": "Proxboss",
+      "category": "Jeux",
+      "package": "dev.proxboss.stationkepler",
+      "accentColor": "#38BDF8",
+      "iconUrl": "/files/apps/station-kepler/versions/v2/icon.png",
+      "coverUrls": [
+        "/files/apps/station-kepler/versions/v2/cover-1.png",
+        "/files/apps/station-kepler/versions/v2/cover-2.png",
+        "/files/apps/station-kepler/versions/v2/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T02:19:05.380Z",
+      "updatedAt": "2026-11-09T02:23:08.243Z",
+      "downloads": 3,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "versionCode": 1,
+          "changelog": "Version initiale",
+          "sizeBytes": 59364568,
+          "sha256": "03e7c27806b93f4afecd0b4db2371fec6229c9f257c08400009999319a7b66ab",
+          "publishedAt": "2026-11-09T02:19:05.380Z",
+          "apkFile": "apps/station-kepler/versions/v1/app.apk"
+        },
+        {
+          "version": "1.0.1",
+          "versionCode": 2,
+          "changelog": "Version initiale",
+          "sizeBytes": 58797828,
+          "sha256": "e0dc7ab21c224aede00a2feb2fb5df825f31884e291598693deef618b58903a7",
+          "publishedAt": "2026-11-09T02:23:08.243Z",
+          "apkFile": "apps/station-kepler/versions/v2/app.apk"
+        }
+      ]
+    },
+    {
+      "slug": "rift-runner",
+      "name": "Rift Runner",
+      "tagline": "Runs de 90 secondes, progression éternelle",
+      "description": "Rift Runner est un roguelite mobile à runs courtes : traversez huit salles générées, frappez au contact ou à distance d'un seul doigt et affrontez un boss à la fin de chaque biome. Tous les deux combats, choisissez parmi trois cartes pour façonner votre build et activer des synergies de Tir, Mêlée, Mobilité ou Survie. Les éclats récoltés nourrissent un arbre de 17 améliorations permanentes, même après une mort. Trois biomes, des événements, un marchand et une seed reproductible : chaque run donne envie de relancer immédiatement.",
+      "developer": "Proxboss",
+      "category": "Jeux",
+      "package": "dev.proxboss.riftrunner",
+      "accentColor": "#A3E635",
+      "iconUrl": "/files/apps/rift-runner/versions/v1/icon.png",
+      "coverUrls": [
+        "/files/apps/rift-runner/versions/v1/cover-1.png",
+        "/files/apps/rift-runner/versions/v1/cover-2.png",
+        "/files/apps/rift-runner/versions/v1/cover-3.png"
+      ],
+      "createdAt": "2026-11-09T02:53:29.266Z",
+      "updatedAt": "2026-11-09T02:53:29.266Z",
+      "downloads": 3,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "versionCode": 1,
+          "changelog": "Version initiale",
+          "sizeBytes": 27464576,
+          "sha256": "c7934ef606bdcc2c536dd755e5979d44bf610eaf1e9885aa4d15a5350dacbfa9",
+          "publishedAt": "2026-11-09T02:53:29.266Z",
+          "apkFile": "apps/rift-runner/versions/v1/app.apk"
         }
       ]
     }
