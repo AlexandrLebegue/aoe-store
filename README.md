@@ -8,7 +8,7 @@ Le dépôt est un monorepo :
 
 ```
 server/   API Node 22 (http natif, multipart maison), port 8099
-cli/      commande store-publish
+cli/      commande store-publish et serveur MCP stdio
 android/  client Compose (dev.proxboss.aoestore, minSdk 30)
 tools/    génération des visuels et des icônes (Pillow)
 data/     catalog.json, blobs et jeton de publication
@@ -147,6 +147,54 @@ exec /home/dev/node-v22.23.4-linux-x64/bin/node /home/dev/projects/aoe-store/cli
 EOF
 chmod +x ~/.local/bin/store-publish
 ```
+
+## MCP pour les agents
+
+Le dépôt fournit un petit serveur MCP stdio : `cli/mcp-server.js`. Il expose trois
+outils aux IA :
+
+| Outil | Rôle |
+| --- | --- |
+| `store_list_apps` | liste le catalogue et les dernières versions |
+| `store_get_app` | renvoie la fiche complète, les versions, le SHA-256 et les URLs |
+| `store_publish` | publie ou met à jour un APK via `store-publish` |
+
+Le jeton n'est jamais passé en argument : le serveur MCP réutilise
+`AOE_STORE_TOKEN`, `AOE_STORE_TOKEN_FILE` ou `data/publish.token`. L'URL par
+défaut est `http://192.168.1.63:8099`, surchargeable avec `AOE_STORE_URL` ou
+l'argument `server` de chaque outil.
+
+Lancement manuel (transport stdio) :
+
+```bash
+AOE_STORE_URL=http://192.168.1.63:8099 \
+  /home/dev/node-v22.23.4-linux-x64/bin/node cli/mcp-server.js
+```
+
+Configuration opencode ajoutée dans `~/.config/opencode/opencode.json` :
+
+```json
+{
+  "mcp": {
+    "aoe-store": {
+      "type": "local",
+      "command": [
+        "/home/dev/node-v22.23.4-linux-x64/bin/node",
+        "/home/dev/projects/aoe-store/cli/mcp-server.js"
+      ],
+      "enabled": true,
+      "environment": {
+        "AOE_STORE_URL": "http://192.168.1.63:8099"
+      }
+    }
+  }
+}
+```
+
+Un redémarrage d'opencode (ou de la session AoE) est nécessaire pour charger le
+serveur. Les outils apparaissent ensuite sous le nom `aoe-store`. Exemple de
+demande à une IA : « liste les apps du store, puis publie
+`android/app/build/outputs/apk/debug/app-debug.apk` en 1.0.4 avec le changelog ».
 
 ## Client Android
 

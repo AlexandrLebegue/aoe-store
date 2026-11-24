@@ -28,6 +28,7 @@ const VALUE_OPTIONS = new Map([
 const FLAG_OPTIONS = new Map([
   ['dry-run', 'dryRun'],
   ['help', 'help'],
+  ['json', 'json'],
   ['no-cover-generation', 'noCoverGeneration'],
 ]);
 
@@ -79,7 +80,7 @@ Utilisation :
     [--version <version>] [--version-code <code>] [--changelog "<texte>"] \\
     [--description "<description longue>"] [--icon <icône.png>] \\
     [--screenshot <capture.png>]... [--accent-color "#RRGGBB"] \\
-    [--server <url>] [--token <jeton> | --token-file <fichier>] [--dry-run]
+    [--server <url>] [--token <jeton> | --token-file <fichier>] [--dry-run] [--json]
 
 Options :
   --server <url>          URL du serveur (défaut : $AOE_STORE_URL ou http://127.0.0.1:8099)
@@ -101,6 +102,7 @@ Options :
   --screenshot <fichier>  Capture d’écran (répétable). Si aucune n’est fournie,
                           3 visuels 1080x1920 sont générés automatiquement.
   --dry-run               Valide et affiche la publication sans envoyer
+  --json                  Sortie JSON machine (utilisée par le serveur MCP)
   --no-cover-generation   Désactive la génération automatique des visuels
   -h, --help              Affiche cette aide
 

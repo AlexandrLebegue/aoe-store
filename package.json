@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node server/src/index.js",
-    "test": "node --test server/test/*.test.js shared/test/*.test.js",
-    "publish": "node cli/bin/store-publish.js"
+    "test": "node --test server/test/*.test.js shared/test/*.test.js cli/test/*.test.js",
+    "publish": "node cli/bin/store-publish.js",
+    "mcp": "node cli/mcp-server.js"
   }
 }

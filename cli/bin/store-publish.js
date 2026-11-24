@@ -17,6 +17,15 @@ import {
 
 const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$/;
 const ACCENT_RE = /^#[0-9A-Fa-f]{6}$/;
+const JSON_MODE = process.argv.includes('--json');
+
+function log(...values) {
+  if (!JSON_MODE) console.log(...values);
+}
+
+function emitJson(payload) {
+  process.stdout.write(`${JSON.stringify(payload)}\n`);
+}
 
 function fail(message) {
   throw new Error(message);
@@ -53,19 +62,20 @@ function checkImage(filePath, label) {
 }
 
 function printSummary(summary) {
-  console.log('');
-  console.log('AoE Store — publication');
-  console.log(`  Serveur       : ${summary.server}`);
-  console.log(`  Application   : ${summary.name} (${summary.slug})`);
-  console.log(`  Version       : ${summary.version} (code ${summary.versionCode})`);
-  console.log(`  Package       : ${summary.package}`);
-  console.log(`  Éditeur       : ${summary.developer} — ${summary.category}`);
-  console.log(`  APK           : ${summary.apkPath} (${humanSize(summary.sizeBytes)})`);
-  console.log(`  SHA-256       : ${summary.sha256}`);
-  console.log(`  Icône         : ${summary.iconLabel}`);
-  console.log(`  Captures      : ${summary.coversLabel}`);
-  console.log(`  Détail public : ${summary.detailUrl}`);
-  console.log('');
+  if (JSON_MODE) return;
+  log('');
+  log('AoE Store — publication');
+  log(`  Serveur       : ${summary.server}`);
+  log(`  Application   : ${summary.name} (${summary.slug})`);
+  log(`  Version       : ${summary.version} (code ${summary.versionCode})`);
+  log(`  Package       : ${summary.package}`);
+  log(`  Éditeur       : ${summary.developer} — ${summary.category}`);
+  log(`  APK           : ${summary.apkPath} (${humanSize(summary.sizeBytes)})`);
+  log(`  SHA-256       : ${summary.sha256}`);
+  log(`  Icône         : ${summary.iconLabel}`);
+  log(`  Captures      : ${summary.coversLabel}`);
+  log(`  Détail public : ${summary.detailUrl}`);
+  log('');
 }
 
 async function main() {
@@ -168,7 +178,7 @@ async function main() {
       if (!fs.existsSync(python)) fail(`Python Pillow introuvable : ${python}`);
       if (!fs.existsSync(script)) fail(`Script de génération introuvable : ${script}`);
       const outputDir = path.join(tempDir, 'covers');
-      console.log('Aucune capture fournie : génération de 3 visuels 1080x1920…');
+      log('Aucune capture fournie : génération de 3 visuels 1080x1920…');
       const args = [
         script,
         '--output-dir',
@@ -223,7 +233,7 @@ async function main() {
       changelog: options.changelog ?? '',
     };
 
-    printSummary({
+    const summary = {
       server,
       slug,
       name,
@@ -238,11 +248,30 @@ async function main() {
       iconLabel,
       coversLabel,
       detailUrl,
-    });
+    };
+    printSummary(summary);
 
     if (options.dryRun) {
-      console.log('Dry-run : aucun envoi effectué.');
-      console.log(`URL de détail qui serait utilisée : ${detailUrl}`);
+      if (JSON_MODE) {
+        emitJson({
+          ok: true,
+          dryRun: true,
+          server,
+          slug,
+          name,
+          version: String(version),
+          versionCode,
+          package: apkInfo.packageName,
+          sha256,
+          sizeBytes,
+          detailUrl,
+          icon: iconPath,
+          screenshots,
+        });
+      } else {
+        log('Dry-run : aucun envoi effectué.');
+        log(`URL de détail qui serait utilisée : ${detailUrl}`);
+      }
       return 0;
     }
 
@@ -254,7 +283,7 @@ async function main() {
       );
     }
 
-    console.log(`Envoi de ${humanSize(sizeBytes)} vers ${server} (jeton : ${source})…`);
+    log(`Envoi de ${humanSize(sizeBytes)} vers ${server} (jeton : ${source})…`);
     const form = new FormData();
     form.append('meta', JSON.stringify(meta));
     form.append(
@@ -304,10 +333,32 @@ async function main() {
 
     const elapsed = ((Date.now() - startedAt) / 1000).toFixed(1);
     const downloadUrl = `${server}${payload?.version?.downloadUrl ?? ''}`;
-    console.log(`Publication réussie (${payload?.created ? 'création' : 'mise à jour'}) en ${elapsed}s.`);
-    console.log(`  Version publiée : ${payload?.version?.version ?? version}`);
-    console.log(`  Téléchargement  : ${downloadUrl}`);
-    console.log(`  Détail public   : ${detailUrl}`);
+    if (JSON_MODE) {
+      emitJson({
+        ok: true,
+        dryRun: false,
+        created: Boolean(payload?.created),
+        server,
+        slug,
+        name,
+        version: payload?.version?.version ?? String(version),
+        versionCode,
+        package: apkInfo.packageName,
+        sha256,
+        sizeBytes,
+        accentColor,
+        detailUrl,
+        downloadUrl,
+        iconUrl: payload?.app?.iconUrl ?? null,
+        coverUrls: payload?.app?.coverUrls ?? [],
+        elapsedSeconds: Number(elapsed),
+      });
+    } else {
+      log(`Publication réussie (${payload?.created ? 'création' : 'mise à jour'}) en ${elapsed}s.`);
+      log(`  Version publiée : ${payload?.version?.version ?? version}`);
+      log(`  Téléchargement  : ${downloadUrl}`);
+      log(`  Détail public   : ${detailUrl}`);
+    }
     return 0;
   } finally {
     await fs.promises.rm(tempDir, { recursive: true, force: true }).catch(() => {});
@@ -318,12 +369,19 @@ try {
   const code = await main();
   process.exitCode = code;
 } catch (error) {
-  if (error instanceof UsageError) {
+  if (JSON_MODE) {
+    emitJson({
+      ok: false,
+      error: {
+        type: error instanceof UsageError ? 'usage' : 'error',
+        message: error.message,
+      },
+    });
+  } else if (error instanceof UsageError) {
     console.error(`Erreur : ${error.message}`);
     console.error('Utilisez --help pour afficher l’aide.');
-    process.exitCode = 2;
   } else {
     console.error(`Erreur : ${error.message}`);
-    process.exitCode = 1;
   }
+  process.exitCode = error instanceof UsageError ? 2 : 1;
 }
