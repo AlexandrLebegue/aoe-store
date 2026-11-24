@@ -16,8 +16,10 @@ deploy/   unité systemd aoe-store.service
 shared/   code partagé (inspection APK, semver, accents)
 ```
 
-Le serveur tourne actuellement sur `http://192.168.1.63:8099` et le catalogue
-contient deux applications : **AoE Companion 0.9.2** et **AoE Store 1.0.2**.
+Le serveur tourne actuellement sur `http://192.168.1.63:8099`. Le catalogue
+est alimenté par les agents ; `GET /api/apps` renvoie la liste à jour (au moment
+de la rédaction : 10 applications, dont **AoE Companion 0.9.7** et
+**AoE Store 1.0.3**).
 
 ## Démarrage rapide
 
@@ -222,7 +224,7 @@ ANDROID_HOME=/home/dev/android-sdk JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 
 ```
 
 APK : `android/app/build/outputs/apk/debug/app-debug.apk`
-(package `dev.proxboss.aoestore`, version `1.0.2`, versionCode `3`).
+(package `dev.proxboss.aoestore`, version `1.0.3`, versionCode `4`).
 
 Installation sur un appareil connecté :
 
@@ -246,8 +248,9 @@ erreurs 401/404/405/409/422 et la permission `600` du jeton.
 
 ## Données et sécurité
 
-- `data/catalog.json` : catalogue courant (l'exemple vide est versionné).
-- `data/blobs/` : APK, icônes et captures (ignoré par git).
+- `data/catalog.json` : catalogue courant, versionné sous forme d’instantanés.
+- `data/blobs/` : APK, icônes et captures (ignorés par git ; un clone ne sert
+  pas les fichiers déjà publiés).
 - `data/publish.token` : jeton de publication, `chmod 600`, ignoré par git.
 - `data/tmp/` : uploads temporaires nettoyés après chaque publication.
 - Lectures publiques sur le LAN ; seule la publication exige le Bearer token.
